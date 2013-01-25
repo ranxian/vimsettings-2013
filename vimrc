@@ -1,5 +1,5 @@
 "ABOUT Original settings
-"set backspace=2   "这个太诡异了！，自己编译安装的7.2就需要这句
+set backspace=2   "我的osx就是需要这个，不然backspace无效
 set autoread	"文件从外部发生变化时自动读入
 set modeline
 set autowrite	"切换buffer时自动写入
