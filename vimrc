@@ -188,22 +188,8 @@ let NERDTreeIgnore=['\.pyc$', '\cscope.*$']
 
 let loaded_matchit=1
 
-function! PhpParseExecute()
-    " Parse and execute current php file
-    setlocal makeprg=php -l
-
-    " Set shellpipe
-    setlocal shellpipe=>
-
-    " Use error format for parsing PHP error output
-    setlocal errorformat=%m\ in\ %f\ on\ line\ %l
-    make %
-    clist
-endfunction
-
-map <F6> :call PhpParseExecute()<CR>
-imap <F6> <ESC>:call PhpParseExecute()<CR>
-
 "if filereadable($VIRTUAL_ENV . '/.vimrc')
 "	source $VIRTUAL_ENV/.vimrc
 "endif
+
+call pathogen#infect()
