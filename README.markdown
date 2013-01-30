@@ -1,6 +1,14 @@
 A wonderful vim configuration 
 ==========================
 
+Features:
+--------------------------
+
+It seems like I'm reinventing wheels. Have a look at https://github.com/spf13/spf13-vim 
+Plugins that I've selected resembles those of spf13-vim. But I have configure them to fit my taste.
+
+TODO
+
 Requirements:
 --------------------------
 
