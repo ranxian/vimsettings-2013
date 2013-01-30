@@ -12,7 +12,9 @@ TODO
 Requirements:
 --------------------------
 
-For taglist, you need ctags, which is included in cscope package in most linux distributions 
+For taglist, you need ctags, which is included in cscope package in most linux distributions.
+For clangcomplete, you may need libclang. (Haven't tried yet)
+For other things, I think at least python is needed, while usually it should be installed by default.
 
 
 Install:
