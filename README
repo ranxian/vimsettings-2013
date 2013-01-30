@@ -1,0 +1,8 @@
+clone the repo to your ~/.vim 
+
+write just one line into your ~/.vimrc containing:
+	source .vim/vimrc 
+
+run ~/.vim/updateall.sh to update submodules grom other external git repos.
+
+you may also copy the content of ~/.vim/bashrcforvim to ~/.bashrc in case you need those features.
