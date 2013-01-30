@@ -62,10 +62,10 @@ map <F3> :NERDTreeToggle<CR>
 map OR :NERDTreeToggle<CR>
 map <C-W> :wq<CR>
 " navigate using ctrl+hljk in insert mode
-imap <C-H> <C-O>h
-imap <C-L> <C-O>l
-imap <C-J> <C-O>j
-imap <C-K> <C-O>k
+" imap <C-H> <C-O>h
+" imap <C-L> <C-O>l
+" imap <C-J> <C-O>j
+" imap <C-K> <C-O>k
 " select all
 map <C-A> ggvG<END>
 " ctrl+shift+c to copy to system paste
