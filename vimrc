@@ -57,8 +57,8 @@ filetype plugin on
 filetype indent on
 syntax on
 
-set completeopt=menu,preview
-"set completeopt=menu
+"set completeopt=menu,preview
+set completeopt=menu
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tagbar
@@ -138,17 +138,17 @@ map <C-F8> :!cscope -ubqRC<CR>:cs kill 0<CR>:cs add cscope.out<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " completion methods 
-autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType ada set omnifunc=adacomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType phtml set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType ruby set omnifunc=rubycomplete#Completeruby
-autocmd FileType sql set omnifunc=sqlcomplete#Completesql
+"autocmd FileType c set omnifunc=ccomplete#Complete
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
+"autocmd FileType ada set omnifunc=adacomplete#Complete
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType phtml set omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+"autocmd FileType ruby set omnifunc=rubycomplete#Completeruby
+"autocmd FileType sql set omnifunc=sqlcomplete#Completesql
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -229,6 +229,10 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+
+" fix conflict with clangcomplete
+let g:neocomplcache_force_overwrite_completefunc = 1
+let g:clang_complete_auto = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 

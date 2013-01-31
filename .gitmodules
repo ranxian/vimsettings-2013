@@ -34,3 +34,6 @@
 [submodule "bundle/solarized"]
 	path = bundle/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/neocomplcache-clang_complete"]
+	path = bundle/neocomplcache-clang_complete
+	url = git://github.com/osyo-manga/neocomplcache-clang_complete.git
