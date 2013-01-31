@@ -48,12 +48,8 @@ set completeopt=menu,preview
 "set completeopt=menu
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" taglist
-let Tlist_Inc_Winwidth=0
-let Tlist_File_Fold_Auto_Close=1
-let Tlist_WinWidth=30
-let Tlist_Use_Right_Window=1
-let Tlist_Use_SingleClick=0
+" tagbar
+nmap <F4> :TagbarToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -67,8 +63,6 @@ let g:miniBufExplUseSingleClick=1 "single click to open a tab
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " key maps	
-map <F4> :Tlist<CR>
-map OS :Tlist<CR>
 map <F3> :NERDTreeToggle<CR>
 map OR :NERDTreeToggle<CR>
 map <C-W> :wq<CR>

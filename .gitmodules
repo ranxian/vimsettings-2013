@@ -16,3 +16,6 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
