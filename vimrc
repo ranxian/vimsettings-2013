@@ -38,7 +38,11 @@ set smartcase
 set tabstop=4
 set shiftwidth=4
 set number "显示行号
-colorscheme desert 
+
+syntax enable
+set background=dark
+colorscheme solarized
+"colorscheme desert 
 
 "set foldmethod=indent
 set foldmethod=marker
@@ -285,4 +289,14 @@ endfunction
 " powerline
 set term=xterm-256color
 "let g:Powerline_symbols = 'fancy'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" solarized
+syntax enable
+set background=light
+set t_Co=16
+let g:solarized_termcolors=16
+colorscheme solarized
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
