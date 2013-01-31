@@ -11,6 +11,17 @@ set wildmenu "输入命令时按tab能在状态栏显示匹配
 "以下两行能够实现只在活跃窗口当前行下面划线
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
+set history=10000
+
+if has('statusline')
+	set laststatus=2
+	set statusline=%<%f\ " Filename
+	set statusline+=%w%h%m%r " Options
+	set statusline+=%{fugitive#statusline()} " Git Hotness
+	set statusline+=\ [%{&ff}/%Y] " Filetype
+	set statusline+=\ [%{getcwd()}] " Current dir
+	set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
+endif
 
 let g:sql_type_default = 'mysql'
 
@@ -239,10 +250,11 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:persistent_undo = 1
 if has("persistent_undo")
-	set undodir = "~/.undodir"
+	set undodir=$HOME/.undotree
 	set undofile
+	set undolevels=1000
+	set undoreload=10000
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
