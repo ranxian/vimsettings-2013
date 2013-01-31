@@ -12,6 +12,14 @@ set wildmenu "输入命令时按tab能在状态栏显示匹配
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 set history=10000
+"set list
+set listchars=tab:,.,trail:.,extends:#,nbsp:.
+
+nnoremap j gj
+nnoremap k gk
+
+" For when you forget to sudo.. Really Write the file. Really good.
+cmap w!! w !sudo tee % >/dev/null
 
 if has('statusline')
 	set laststatus=2
@@ -26,6 +34,7 @@ endif
 let g:sql_type_default = 'mysql'
 
 set ignorecase "查找时忽略大小写
+set smartcase
 set tabstop=4
 set shiftwidth=4
 set number "显示行号
@@ -77,7 +86,7 @@ map <C-A> ggvG<END>
 map  "+y
 " save
 " you need stty stop ^@ in .bashrc
-map  <C-s> :w<CR> 
+map  <C-s> :w<CR>
 map  :w<CR>
 map <F9> :call EnhancedCommentify('yes', 'guess')<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -141,9 +150,10 @@ autocmd FileType sql set omnifunc=sqlcomplete#Completesql
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " remove trailing whitespaces when saving
-autocmd BufWritePre *.py normal m`:%s/\s\+$//e ''
-autocmd BufWritePre *.php :%s/\s\+$//e
-autocmd BufWritePre *.phtml :%s/\s\+$//e
+autocmd FileType c,cpp,java,php,javascript,python,twig,xml,yml autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+"autocmd BufWritePre *.py normal m`:%s/\s\+$//e ''
+"autocmd BufWritePre *.php :%s/\s\+$//e
+"autocmd BufWritePre *.phtml :%s/\s\+$//e
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -252,3 +262,21 @@ if has("persistent_undo")
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! StripTrailingWhitespace()
+	" To disable the stripping of whitespace, add the following to your
+	" .vimrc.local file:
+	" let g:spf13_keep_trailing_whitespace = 1
+	if !exists('g:spf13_keep_trailing_whitespace')
+		" Preparation: save last search, and cursor position.
+		let _s=@/
+		let l = line(".")
+		let c = col(".")
+		" do the business:
+		%s/\s\+$//e
+		" clean up: restore previous search history, and cursor position
+		let @/=_s
+		call cursor(l, c)
+	endif
+endfunction
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
