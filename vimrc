@@ -236,3 +236,13 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 "autocmd FileType python map <F5> :w<CR>:!python %<CR>
 "autocmd FileType python map <F6> :w<CR>:!pdb %<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:persistent_undo = 1
+if has("persistent_undo")
+	set undodir = "~/.undodir"
+	set undofile
+endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
