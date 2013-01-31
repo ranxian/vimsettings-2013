@@ -40,3 +40,9 @@
 [submodule "bundle/clang_complete"]
 	path = bundle/clang_complete
 	url = git://github.com/Rip-Rip/clang_complete.git
+[submodule "bundle/IndexedSearch"]
+	path = bundle/IndexedSearch
+	url = git://github.com/vim-scripts/IndexedSearch.git
+[submodule "bundle/SearchComplete"]
+	path = bundle/SearchComplete
+	url = git://github.com/vim-scripts/SearchComplete.git
