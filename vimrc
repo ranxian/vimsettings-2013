@@ -295,8 +295,8 @@ set term=xterm-256color
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " solarized
 syntax enable
-set background=light
-set t_Co=16
-let g:solarized_termcolors=16
+set background=dark
+set t_Co=256
+let g:solarized_termcolors=256
 colorscheme solarized
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
