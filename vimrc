@@ -1,6 +1,7 @@
 call pathogen#infect()
 
 "ABOUT Original settings
+set nocompatible  
 set backspace=2   "我的osx就是需要这个，不然backspace无效
 set autoread	"文件从外部发生变化时自动读入
 set modeline
