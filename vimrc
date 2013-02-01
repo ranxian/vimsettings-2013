@@ -109,9 +109,13 @@ if has("cscope")
 	if filereadable("cscope.out")
 		cs add cscope.out
 		" else add database pointed to by environment
-	elseif filereadable("Kconfig") || filereadable("CMakeLists.txt") || filereadable("Makefile") || filereadable("configure")
+	elseif filereadable("Kconfig")
+		silent !echo "Building cscope database for the kernel, it takes a long time, have a cup of coffee. Ctrl-c to bypass or touch cscope.out to fool me."
+		silent !cscope -bkRC
+		cs add cscope.out
+	elseif filereadable("CMakeLists.txt") || filereadable("Makefile") || filereadable("configure")
 		silent !echo "Building cscope database, it may take a long time, ctrl-c to bypass."
-		silent !cscope -ubqRC
+		silent !cscope -bRC
 		cs add cscope.out
 	endif
 	set csverb
@@ -121,7 +125,7 @@ map <C-\> :cs find 0 <C-R>=expand("<cword>")<CR><CR>
 map  :cs find 3 <C-R>=expand("<cword>")<CR><CR>
 "map  :vimgrep <C-R>=expand("<cword>")<CR> **/**.c **/**.h **/**.cpp <CR>
 map  :Ack -i <C-R>=expand("<cword>")<CR> <CR>
-map <C-F8> :!cscope -ubqRC<CR>:cs kill 0<CR>:cs add cscope.out<CR>
+map <C-F8> :!cscope -bRC<CR>:cs kill 0<CR>:cs add cscope.out<CR>
 	"重建cscope.out，断开原有cscope连接并建立新的连接
 	"-u 无条件重建，假设所有文件都发生了改变
 	"-b build the cross-reference only
