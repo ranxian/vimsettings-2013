@@ -79,6 +79,7 @@ let g:miniBufExplUseSingleClick=1 "single click to open a tab
 " key maps	
 map <F3> :NERDTreeToggle<CR>
 map OR :NERDTreeToggle<CR>
+map <F9> :call EnhancedCommentify('yes', 'guess')<CR>
 map <C-W> :wq<CR>
 " navigate using ctrl+hljk in insert mode
 " imap <C-H> <C-O>h
@@ -93,13 +94,12 @@ map  "+y
 " you need stty stop ^@ in .bashrc
 map  <C-s> :w<CR>
 map  :w<CR>
-map <F9> :call EnhancedCommentify('yes', 'guess')<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " cscope
-" from :help cscope 
+" I need to autobuild the cscope database
 if has("cscope")
 	set csprg=/usr/bin/cscope
 	set csto=0
@@ -109,8 +109,10 @@ if has("cscope")
 	if filereadable("cscope.out")
 		cs add cscope.out
 		" else add database pointed to by environment
-	elseif $CSCOPE_DB != ""
-		cs add $CSCOPE_DB
+	elseif filereadable("Kconfig") || filereadable("CMakeLists.txt") || filereadable("Makefile") || filereadable("configure")
+		silent !echo "Building cscope database, it may take a long time, ctrl-c to bypass."
+		silent !cscope -ubqRC
+		cs add cscope.out
 	endif
 	set csverb
 endif
@@ -174,10 +176,9 @@ autocmd FileType html,phtml setlocal expandtab smarttab shiftwidth=4 softtabstop
 "NERDTree 
 let NERDTreeMouseMode=2
 let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc$', '\cscope.*$']
+let NERDTreeIgnore=['\.pyc$', '\cscope.*$', '\.o$', '\~$']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let loaded_matchit=1 "TODO
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neocomplcache 
