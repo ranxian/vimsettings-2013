@@ -58,8 +58,8 @@ filetype plugin on
 filetype indent on
 syntax on
 
-set completeopt=menu,preview
-"set completeopt=menu
+"set completeopt=menu,preview
+set completeopt=menu
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tagbar
