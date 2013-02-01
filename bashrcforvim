@@ -1,2 +1,2 @@
 stty stop ^@ 
-alias svndiff="svn diff -x --ignore-eol-style > /tmp/svndiffforvim.diff && vim /tmp/svndiffforvim.diff"
+alias svndiff="svn diff -x --ignore-eol-style -x --ignore-all-space > /tmp/svndiffforvim.diff && vim /tmp/svndiffforvim.diff"

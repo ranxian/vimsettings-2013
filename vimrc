@@ -101,7 +101,6 @@ map  :w<CR>
 " cscope
 " I need to autobuild the cscope database
 if has("cscope")
-	set csprg=/usr/bin/cscope
 	set csto=0
 	set cst
 	set nocsverb
