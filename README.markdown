@@ -34,4 +34,4 @@ run ~/.vim/updateall.sh to update submodules from other external git repos.
 
 you may also copy the content of ~/.vim/bashrcforvim to ~/.bashrc in case you need those features.
 	
-	cat ~/.vim/bashrcforvim >> ~/.bashrc
+	echo "source ~/.vim/bashrcforvim" >> ~/.bashrc
