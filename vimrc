@@ -1,5 +1,10 @@
 call pathogen#infect()
 
+" map CTRL-E to end-of-line (insert mode)
+imap <C-e> <esc>$i<right>
+" map CTRL-A to beginning-of-line (insert mode)
+imap <C-a> <esc>0i
+
 "ABOUT Original settings
 set nocompatible  
 set backspace=2   "我的osx就是需要这个，不然backspace无效
@@ -43,9 +48,9 @@ set number "显示行号
 syntax enable
 set background=dark
 colorscheme solarized
-"colorscheme desert 
+colorscheme desert 
 
-"set foldmethod=indent
+set foldmethod=indent
 set foldmethod=marker
 set hlsearch "高亮搜索字
 set incsearch "增量搜索
@@ -87,7 +92,7 @@ map <C-W> :wq<CR>
 " imap <C-J> <C-O>j
 " imap <C-K> <C-O>k
 " select all
-map <C-A> ggvG<END>
+" map <C-A> ggvG<END>
 " ctrl+shift+c to copy to system paste
 map  "+y
 " save
@@ -214,6 +219,7 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
 " inoremap <expr><C-l>     neocomplcache#complete_common_string()
+let g:neocomplcache_enable_auto_select=0
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -224,7 +230,7 @@ inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 " inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-e>  neocomplcache#complete_common_string()
+"inoremap <expr><C-e>  neocomplcache#complete_common_string()
 
 " Enable heavy omni completion, which require computational power and may stall the vim. 
 if !exists('g:neocomplcache_omni_patterns')
@@ -295,11 +301,11 @@ function! StripTrailingWhitespace()
 endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" powerline
-set term=xterm-256color
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" powerline
+"set term=mac-ansi
 "let g:Powerline_symbols = 'fancy'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
