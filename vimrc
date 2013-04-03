@@ -129,7 +129,7 @@ map <C-\> :cs find 0 <C-R>=expand("<cword>")<CR><CR>
 map  :cs find 3 <C-R>=expand("<cword>")<CR><CR>
 "map  :vimgrep <C-R>=expand("<cword>")<CR> **/**.c **/**.h **/**.cpp <CR>
 map  :Ack -i <C-R>=expand("<cword>")<CR> <CR>
-map <C-F8> :!cscope -bRC<CR>:cs kill 0<CR>:cs add cscope.out<CR>
+map <F8> :!cscope -bRC<CR>:cs kill 0<CR>:cs add cscope.out<CR>
 	"重建cscope.out，断开原有cscope连接并建立新的连接
 	"-u 无条件重建，假设所有文件都发生了改变
 	"-b build the cross-reference only
@@ -216,6 +216,8 @@ if !exists('g:neocomplcache_keyword_patterns')
   let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+let g:neocomplcache_enable_auto_select = 0
 
 " Plugin key-mappings.
 " inoremap <expr><C-l>     neocomplcache#complete_common_string()
